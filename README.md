@@ -99,4 +99,10 @@ But here are a few things to make sure is configured correctly:
   - Ensure that the correct number of LED's are listed for Top, Bottom, Left and Right
   - Input position can be used to move the starting position of the LED's
 
+## Useful Links
+- [https://www.majestechs.com/ambilight-tutorial](https://www.majestechs.com/ambilight-tutorial)
+- [DIY Hyperion Ambient TV Light Project (Raspberry Pi + Arduino) Complete Setup](https://www.youtube.com/watch?v=hpBRKZ_2aYo)
+- [LEDs behind your screen that MATCH the video you're watching.](https://www.youtube.com/watch?v=urOEHzbV48A&t=1297s)
+- [Screen Matched LED Backlight using Hyperion and Hyperbian](https://www.youtube.com/watch?v=is9iRU9qXDU)
+
 *If you have any issues or queries, please feel free to reach out to me at 08regib@googlemail.com*
