@@ -71,6 +71,7 @@ Here is a high-level system diagram of what we are trying to build:
 
 ## Wiring up the LED Strip:
 The WS2812B LED Strip has 3 inputs on a female connector like in the image below:
+
 ![Connector](images/connector.jpg)
 
 Out of the 3 inputs, the red wire input is for the 5V power supply, the white wire input is for the ground and the green wire input is the data line to control the LED's. You will connect up the red and the white inputs to the power supply directly using jumper cables and then use a Dupont wire to connect the green input to GPIO18 on the pi. You will also need a jumper wire from a GND on the pi into the GND port of the power supply. I chose to wire it up so that the pi is also powered using the power supply, and I did this by stripping the USB-A end off of Micro-USB cable and then connecting that to the 5V and GND ports on the power supply. The wiring diagram below shows the full set up:
