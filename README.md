@@ -9,21 +9,20 @@ Please note this tutorial is based on the myriad of tutorials already out there.
 Be sure to check out the Useful Links section at the end of this tutorial for all the tutorials I used to carry out this project.
 
 Below is the list of the main components required for this project:
-- WS2812B LED Light Strip
-- 5V 10-15A Power Supply (Preferably with barrel connector and adapter)
-- Raspberry Pi Zero W (Preferably with pre-soldered headers)
-- Micro-SD Card and Micro-SD Card Reader
-- Video Capture Card with Loop
+- [WS2812B LED Light Strip](https://amzn.to/3pNuvZK)
+- [5V 10-15A Power Supply](https://amzn.to/2P58nh3) (Preferably with barrel connector and adapter)
+- [Raspberry Pi Zero W](https://thepihut.com/collections/all/products/raspberry-pi-zero-wh-with-pre-soldered-header) (Preferably with pre-soldered headers)
+- [Micro-SD Card](https://thepihut.com/products/noobs-preinstalled-sd-card) and [Micro-SD Card Reader](https://thepihut.com/products/usb-2-0-microsd-card-reader-microsd-to-usb)
+- [Video Capture Card with Loop](https://amzn.to/3aM0B3Z)
 - HDMI Cable
 - 2 x Micro-USB to USB-A Cable
 - Dupont Wires
-- Jumper Wires
-	
-I have included the links for the things that I specifically bought, however you may be able to find better/cheaper options with more up to date research.
+- Jumper Wires	
+*I have included the links for the things that I specifically bought, however you may be able to find better/cheaper options with more up to date research.*
 
 Here is a high-level system diagram of what we are trying to build:
 
-Note: The Smart Socket is an optional extension to be able to turn the ambilight system on and off easily. 
+*Note: The Smart Socket is an optional extension to be able to turn the ambilight system on and off easily.*
 
 ## Setting Up the Raspberry Pi:
 1. Install the Raspberry Pi Imager (https://www.raspberrypi.org/software/) software on a computer.
@@ -31,31 +30,41 @@ Note: The Smart Socket is an optional extension to be able to turn the ambilight
 3. Install the Raspberry Pi Lite OS image on to the Micro-SD Card.
 4. Open up the Micro-SD Card folder
 5. Add an empty file with the name `ssh` and no extension
-6. Add a file called wpa_supplicant.conf file with the following content 
-		`
-		country=gb
-		update_config=1
-		ctrl_interface=/var/run/wpa_supplicant
-		network={
-		       scan_ssid=1
-		        ssid="WIFI_NETWORK_NAME_HERE"
-        psk="WIFI_PASSWORD_HERE"
-    }`
-	Make sure to replace the ssid and psk fields with the correct ssid and password for your wifi network
+6. Add a file called wpa_supplicant.conf file with the following content
+	```
+	country=gb
+	update_config=1
+	ctrl_interface=/var/run/wpa_supplicant
+	network={
+		scan_ssid=1
+		ssid="WIFI_NETWORK_NAME_HERE"
+        	psk="WIFI_PASSWORD_HERE"
+ 	}
+	```
+	*Make sure to replace the ssid and psk fields with the correct ssid and password for your wifi network*
 7. Unplug and reboot the pi and you should now see it appear in your router as a connected device
 8. While your pi is powered and connected, open up a command line window on your computer and type in the following command:
-		`ssh pi@<ip-address>` *(Replace the ip-address with the ip address of the pi that you find in Step 7)*
+```
+	ssh pi@<ip-address>
+``` 
+*(Replace the ip-address with the ip address of the pi that you find in Step 7)*
 9. This should prompt you to enter a password. By default the password for the raspberry pi is `raspberry`, so go ahead and type this in. You should now have a terminal interface on the pi.
 10. Navigate to the following web page and click on the latest release: https://github.com/hyperion-project/hyperion.ng/releases
 11. Scroll to the bottom of the page and copy the link for the "Linux-armv6l.deb" version of the release.
 12. On the terminal type in the following command and replace <link> with the link copied in Step 11
-		`wget <link>`
+```
+	wget <link>
+```
 13. From the hyperion release page, copy the title of the link that you copied previously (e.g. Hyperion-2.0.0-alpha.6-Linux-armv6l.deb). 
 14. Then type the following command into the pi terminal, replacing <title> with the title copied in Step 13:
-		`sudo dpkg -i <title>`
+```
+	sudo dpkg -i <title>
+```
 15. Enter the following commands into the pi terminal:
-		`sudo systemctl disable --now hyperiond@pi`
-		`sudo systemctl enable --now hyperiond@root`
+```
+	sudo systemctl disable --now hyperiond@pi
+	sudo systemctl enable --now hyperiond@root
+```
 16. Once this has been done, reboot your pi and verify that it is running by navigating to <ip-address-of-pi>:8090 on a web browser on your computer. This should load up the Hyperion configuration page.
 
 ## Wiring up the LED Strip:
