@@ -22,6 +22,7 @@ Below is the list of the main components required for this project:
 *I have included the links for the things that I specifically bought, however you may be able to find better/cheaper options with more up to date research.*
 
 Here is a high-level system diagram of what we are trying to build:
+
 ![System Diagram](images/SystemDiagram.png)
 
 *Note: The Smart Socket is an optional extension to be able to turn the ambilight system on and off easily.*
@@ -75,6 +76,7 @@ The WS2812B LED Strip has 3 inputs on a female connector like in the image below
 ![Connector](images/connector.jpg)
 
 Out of the 3 inputs, the red wire input is for the 5V power supply, the white wire input is for the ground and the green wire input is the data line to control the LED's. You will connect up the red and the white inputs to the power supply directly using jumper cables and then use a Dupont wire to connect the green input to GPIO18 on the pi. You will also need a jumper wire from a GND on the pi into the GND port of the power supply. I chose to wire it up so that the pi is also powered using the power supply, and I did this by stripping the USB-A end off of Micro-USB cable and then connecting that to the 5V and GND ports on the power supply. The wiring diagram below shows the full set up:
+
 ![Wiring Diagram](images/WiringDiagram.jpg)
 
 This should provide power to the pi and enable the pi to communicate with the LED light strip. To provide video input to the pi, connect up the Chromecast to the video capture card and then connect the video capture card to the second micro-usb port on the pi. 
