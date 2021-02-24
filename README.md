@@ -51,6 +51,7 @@ Here is a high-level system diagram of what we are trying to build:
 	ssh pi@<ip-address>
 ``` 
 *(Replace the ip-address with the ip address of the pi that you find in Step 7)*
+
 9. This should prompt you to enter a password. By default the password for the raspberry pi is `raspberry`, so go ahead and type this in. You should now have a terminal interface on the pi.
 10. Navigate to the following web page and click on the latest release: https://github.com/hyperion-project/hyperion.ng/releases
 11. Scroll to the bottom of the page and copy the link for the "Linux-armv6l.deb" version of the release.
